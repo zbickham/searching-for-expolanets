@@ -8,33 +8,3 @@
 {"kepid":10872983,"kepoi_name":"K00756.03","kepler_name":"Kepler-228 b","koi_disposition":"CONFIRMED","koi_pdisposition":"CANDIDATE","koi_score":0.992}
 {"kepid":6721123,"kepoi_name":"K00114.01","kepler_name":null,"koi_disposition":"FALSE POSITIVE","koi_pdisposition":"FALSE POSITIVE","koi_score":0.0}
 {"kepid":10910878,"kepoi_name":"K00757.01","kepler_name":"Kepler-229 c","koi_disposition":"CONFIRMED","koi_pdisposition":"CANDIDATE","koi_score":1.0}
-{"kepid":11446443,"kepoi_name":"K00001.01","kepler_name":"Kepler-1 b","koi_disposition":"CONFIRMED","koi_pdisposition":"CANDIDATE","koi_score":0.811}
-{"kepid":10666592,"kepoi_name":"K00002.01","kepler_name":"Kepler-2 b","koi_disposition":"CONFIRMED","koi_pdisposition":"CANDIDATE","koi_score":1.0}
-{"kepid":6922244,"kepoi_name":"K00010.01","kepler_name":"Kepler-8 b","koi_disposition":"CONFIRMED","koi_pdisposition":"CANDIDATE","koi_score":0.998}
-{"kepid":10984090,"kepoi_name":"K00112.02","kepler_name":"Kepler-466 c","koi_disposition":"CONFIRMED","koi_pdisposition":"CANDIDATE","koi_score":1.0}
-{"kepid":10419211,"kepoi_name":"K00742.01","kepler_name":null,"koi_disposition":"FALSE POSITIVE","koi_pdisposition":"FALSE POSITIVE","koi_score":0.0}
-{"kepid":10464078,"kepoi_name":"K00743.01","kepler_name":null,"koi_disposition":"FALSE POSITIVE","koi_pdisposition":"FALSE POSITIVE","koi_score":0.0}
-{"kepid":10480982,"kepoi_name":"K00744.01","kepler_name":null,"koi_disposition":"FALSE POSITIVE","koi_pdisposition":"FALSE POSITIVE","koi_score":0.0}
-{"kepid":10485250,"kepoi_name":"K00745.01","kepler_name":null,"koi_disposition":"FALSE POSITIVE","koi_pdisposition":"FALSE POSITIVE","koi_score":0.0}
-{"kepid":10526549,"kepoi_name":"K00746.01","kepler_name":"Kepler-660 b","koi_disposition":"CONFIRMED","koi_pdisposition":"CANDIDATE","koi_score":1.0}
-{"kepid":10583066,"kepoi_name":"K00747.01","kepler_name":"Kepler-661 b","koi_disposition":"CONFIRMED","koi_pdisposition":"CANDIDATE","koi_score":1.0}
-{"kepid":10583180,"kepoi_name":"K00748.01","kepler_name":null,"koi_disposition":"FALSE POSITIVE","koi_pdisposition":"FALSE POSITIVE","koi_score":0.0}
-{"kepid":10601284,"kepoi_name":"K00749.01","kepler_name":"Kepler-226 c","koi_disposition":"CONFIRMED","koi_pdisposition":"CANDIDATE","koi_score":1.0}
-{"kepid":10601284,"kepoi_name":"K00749.02","kepler_name":"Kepler-226 b","koi_disposition":"CONFIRMED","koi_pdisposition":"CANDIDATE","koi_score":0.98}
-{"kepid":10601284,"kepoi_name":"K00749.03","kepler_name":"Kepler-226 d","koi_disposition":"CONFIRMED","koi_pdisposition":"CANDIDATE","koi_score":0.971}
-{"kepid":2306756,"kepoi_name":"K00113.01","kepler_name":null,"koi_disposition":"FALSE POSITIVE","koi_pdisposition":"FALSE POSITIVE","koi_score":null}
-{"kepid":10662202,"kepoi_name":"K00750.01","kepler_name":"Kepler-662 b","koi_disposition":"CONFIRMED","koi_pdisposition":"CANDIDATE","koi_score":1.0}
-{"kepid":10682541,"kepoi_name":"K00751.01","kepler_name":"Kepler-663 b","koi_disposition":"CONFIRMED","koi_pdisposition":"CANDIDATE","koi_score":1.0}
-{"kepid":11460018,"kepoi_name":"K00769.01","kepler_name":"Kepler-671 b","koi_disposition":"CONFIRMED","koi_pdisposition":"CANDIDATE","koi_score":1.0}
-{"kepid":11463211,"kepoi_name":"K00770.01","kepler_name":null,"koi_disposition":"FALSE POSITIVE","koi_pdisposition":"FALSE POSITIVE","koi_score":0.0}
-{"kepid":11465813,"kepoi_name":"K00771.01","kepler_name":null,"koi_disposition":"FALSE POSITIVE","koi_pdisposition":"FALSE POSITIVE","koi_score":0.0}
-{"kepid":11493732,"kepoi_name":"K00772.01","kepler_name":null,"koi_disposition":"FALSE POSITIVE","koi_pdisposition":"FALSE POSITIVE","koi_score":0.0}
-{"kepid":11507101,"kepoi_name":"K00773.01","kepler_name":"Kepler-672 b","koi_disposition":"CONFIRMED","koi_pdisposition":"CANDIDATE","koi_score":1.0}
-{"kepid":10910878,"kepoi_name":"K00757.02","kepler_name":"Kepler-229 d","koi_disposition":"CONFIRMED","koi_pdisposition":"CANDIDATE","koi_score":0.992}
-{"kepid":10910878,"kepoi_name":"K00757.03","kepler_name":"Kepler-229 b","koi_disposition":"CONFIRMED","koi_pdisposition":"CANDIDATE","koi_score":1.0}
-{"kepid":10987985,"kepoi_name":"K00758.01","kepler_name":"Kepler-665 b","koi_disposition":"CONFIRMED","koi_pdisposition":"CANDIDATE","koi_score":1.0}
-{"kepid":11018648,"kepoi_name":"K00759.01","kepler_name":"Kepler-230 b","koi_disposition":"CONFIRMED","koi_pdisposition":"CANDIDATE","koi_score":1.0}
-{"kepid":11018648,"kepoi_name":"K00759.02","kepler_name":"Kepler-230 c","koi_disposition":"CONFIRMED","koi_pdisposition":"CANDIDATE","koi_score":0.978}
-{"kepid":11138155,"kepoi_name":"K00760.01","kepler_name":null,"koi_disposition":"CANDIDATE","koi_pdisposition":"CANDIDATE","koi_score":1.0}
-{"kepid":11152159,"kepoi_name":"K00761.01","kepler_name":null,"koi_disposition":"FALSE POSITIVE","koi_pdisposition":"FALSE POSITIVE","koi_score":0.0}
-{"kepid":11153539,"kepoi_name":"K00762.01","kepler_name":"Kepler-666 b","koi_disposition":"CONFIRMED","koi_pdisposition":"CANDIDATE","koi_score":1.0}
