@@ -1,1 +1,12 @@
+FROM python:3.9
 
+RUN pip3 install redis \
+                 hotqueue==0.2.8 \
+                 matplotlib==3.3.4 \ 
+                 Flask==2.0.3
+
+COPY ./src/* /app/
+
+WORKDIR /app/
+ENTRYPOINT ["python3"]
+CMD ["worker.py"]
