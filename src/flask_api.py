@@ -11,10 +11,12 @@ app = Flask(__name__)
 def load_data():
     
     logging.info('Files have been loaded into the memory.\n')
-    inputfile = pd.read_csv(r'koi_candidates.csv',usecols = ["kepid","kepoi_name","kepler_name","koi_disposition","koi_pdisposition","koi_score"])
+    inputfile = pd.read_csv(r'koi_candidates.csv',nrows=40,usecols = ["kepid","kepoi_name","kepler_name","koi_disposition","koi_pdisposition","koi_score"])
     inputfile.to_json(r'data.json',orient='records',lines=True)
-    print(inputfile)
-    return inputfile
+    global data
+    with open('data.json','r') as inputjson:
+        data =inputjson.read()
+    print(data)
 #return 'Data loading is complete.\n'
 
 # All the GET Defintions
