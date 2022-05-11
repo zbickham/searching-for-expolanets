@@ -11,7 +11,7 @@ app = Flask(__name__)
 def load_data():
     
     logging.info('Files have been loaded into the memory.\n')
-    inputfile = pd.read_csv(r'koi_candidates.csv',usecols = ["kepid","kepoi_name"])
+    inputfile = pd.read_csv(r'koi_candidates.csv',usecols = ["kepid","kepoi_name","kepler_name","koi_disposition","koi_pdisposition","koi_score"])
     inputfile.to_json(r'data.json',orient='records',lines=True)
     print(inputfile)
     return inputfile
