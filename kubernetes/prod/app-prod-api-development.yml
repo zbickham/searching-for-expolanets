@@ -1,1 +1,27 @@
-
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kepler-flask-deployment
+  labels:
+    app: kepler-flask
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kepler-flask
+  template:
+    metadata:
+      labels:
+        app: kepler-flask
+    spec:
+      containers:
+        - name: kepler-flask
+          imagePullPolicy: Always
+          image: zbickham/kepler-api:0.1
+          env: 
+          - name: REDIS_IP
+            value: "XX.XX.XXX.XXX" 
+          ports:
+          - name: http
+            containerPort: 5000
