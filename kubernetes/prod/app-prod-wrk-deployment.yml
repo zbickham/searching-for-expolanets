@@ -1,1 +1,24 @@
-
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kepler-wrk-deployment
+  labels:
+    app: kepler-wrk
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: kepler-wrk
+  template:
+    metadata:
+      labels:
+        app: kepler-wrk
+    spec:
+      containers:
+        - name: kepler-wrk
+          imagePullPolicy: Always
+          image: zbickham/kepler-wrk:0.1
+          env:
+          - name: REDIS_IP
+            value: "XX.XX.XXX.XXX"
