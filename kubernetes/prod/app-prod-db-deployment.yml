@@ -1,1 +1,30 @@
-
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kepler-db-deployment
+  labels:
+    app: kepler-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kepler-db
+  template:
+    metadata:
+      labels:
+        app: kepler-db
+    spec:
+      containers:
+        - name: kepler-db
+          image: redis:6
+          ports:
+          - name: http
+            containerPort: 6379	  
+          volumeMounts:	 
+            - name: data
+              mountPath: "/data"
+      volumes:
+      - name: data
+        persistentVolumeClaim:
+          claimName: data
