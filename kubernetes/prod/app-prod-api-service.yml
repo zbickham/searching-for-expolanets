@@ -1,1 +1,13 @@
-
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kepler-flask-service
+spec:
+  type: ClusterIP
+  selector:
+    app: kepler-flask
+  ports:
+  - name: kepler-flask
+    port: 5000
+    targetPort: 5000
