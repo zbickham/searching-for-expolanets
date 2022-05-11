@@ -1,1 +1,11 @@
-
+---
+version: '1'
+services:
+    redis:
+        image: redis:latest
+        container_name: zbickham-app-db
+        ports:
+            - 6403:6379
+        volumes:
+            - ./config/redis.conf:/redis.conf
+        command: [ "redis-server", "/redis.conf" ]
