@@ -4,32 +4,36 @@ import json
 import logging
 import sys
 import pandas as pd
+from wget import download
+import os
 app = Flask(__name__)
 
 
 @app.route('/load_data', methods = ['POST'])
 def load_data():
-    
-    logging.info('Files have been loaded into the memory.\n')
+    os.remove('koi_candidates.csv')
+    print('\nDownloading Files.\n\nGive me a Second!')
+    download("https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=cumulative&format=csv", out = "koi_candidates.csv", bar=None)
+
+    success = '\nFile has been successfully loaded into the memory.\n'
+    logging.info('File is being loaded into the memory.\n')
     inputfile = pd.read_csv(r'koi_candidates.csv',nrows=40,usecols = ["kepid","kepoi_name","kepler_name","koi_disposition","koi_pdisposition","koi_score"])
     inputfile.to_json(r'data.json',orient='records',lines=True)
     global data
     with open('data.json','r') as inputjson:
         data =inputjson.read()
-    print(data)
-#return 'Data loading is complete.\n'
+        print(success)
+    return 'Data loading is complete.\n'
 
-# All the GET Defintions
-'''
+
 @app.route('/help', methods=['GET'])
 def return_instructions():
     '''
-'''
     This Route returns all of the available commands and instructions on
     how to use them.
-   ''' '''
+    '''
     logging.info("Instructions on requesting data printed below.")
-    output = "/help - (GET) - o"
+    output = "/help - (GET) - output these instructions"
     output = output + "\n/load_data - (POST) -  "
     output = output + "\n/epoch - (GET) - Returns all EPOCHs. "
     output = output + "\n/epoch/<epoch> - (GET) - R" 
@@ -37,7 +41,7 @@ def return_instructions():
 
     return output
 
-@app.route('/epoch', methods=['GET'])
+@app.route('/initalcand', methods=['GET'])
 def return_epoch():
     """
     This route grabs all of the epochs and makes it a list.
@@ -55,7 +59,7 @@ def return_epoch():
         epoch_list = epoch_list + epoch_data[i]['EPOCH'] + '\n'
 
     return epoch_list
-
+'''
 @app.route('/epoch/<epoch>', methods=['GET'])
 def return_specific_epoch(epoch: str):
     """
