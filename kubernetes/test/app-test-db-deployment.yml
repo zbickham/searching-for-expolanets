@@ -2,31 +2,31 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app-test-db-deployment
+  name: kepler-test-db-deployment
   labels:
-    username: app
+    username: kepler
     env: test
 spec:
   replicas: 1
   selector:
     matchLabels:
-      username: app
+      username: kepler
       env: test
-      app: app-test-db
+      app: kepler-test-db
   template:
     metadata:
       labels:
-        username: app
+        username: kepler
         env: test
-        app: app-test-db
+        app: kepler-test-db
     spec:
       containers:
         - name: redis
           image: redis:5.0.0
           volumeMounts:
-          - name: app-test-db-volume
+          - name: kepler-test-db-volume
             mountPath: "/data"
       volumes:
-      - name: app-test-db-volume
+      - name: kepler-test-db-volume
         persistentVolumeClaim:
-          claimName: app-test-db-pvc
+          claimName: kepler-test-db-pvc
