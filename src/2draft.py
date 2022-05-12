@@ -15,9 +15,10 @@ def load_data():
     #os.remove('koi_candidates.csv')
     print('\nDownloading Files.\n\nGive me a Second!')
     #download("https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=cumulative&format=csv", out = "koi_candidates.csv", bar=None)
+
     success = '\nFile has been successfully loaded into the memory.\n'
     logging.info('File is being loaded into the memory.\n')
-    #inputfile = pd.read_csv(r'koi_candidates.csv',nrows=10,usecols = ["kepid","kepoi_name","kepler_name","koi_disposition","koi_pdisposition","koi_score"])
+    
     jsonarray = []
     jsonpath = r'data.json'
     csvpath = 'koi_candidates.csv'
@@ -27,7 +28,7 @@ def load_data():
         data = {}
         data['Candidates'] = []
         for row in csvReader:
-            if len(data['Candidates']) == 10:
+            if len(data['Candidates']) == 20:
                 break
             data['Candidates'].append(dict(row))
         print('\ndata has been successfully loaded. \n')
@@ -56,9 +57,6 @@ def return_confirmed_planets():
     """
     output = "\n"
     logging.info("Looking for all of the Epoch Positions\n")
-    global epoch_length
-    global epoch_list #also output
-    global epoch_data
     planet_list = "\n"
     datasave = data['Candidates']
     data_length = len(datasave)
@@ -70,7 +68,52 @@ def return_confirmed_planets():
     print('\nList of Confirmed Planets:\n',planet_list)
     return planet_list
 
+#@app.route('/epoch/<epoch>', methods=['GET'])
+def return_dispositions():
+    """
+    Yea
+    """
+    logging.info("Data")
+    datasave = data['Candidates']
+    updated_data = {'CONFIRMED' : [[],["Total Confirmed: ",0]],'FALSE POSITIVE': [[],["Total False Positives: ",0]],'NOT DISPOSITIONED': [[],["Total Not Dispositioned: ",0]],'CANDIDATE': [[],["Total Candidates: ",0]]}
+    wanted_data = ['kepid','kepoi_name','kepler_name','koi_disposition',\
+'koi_pdisposition','koi_score']
+
+    for i in range(len(datasave)):
+        current_og_candidate = datasave[i]['koi_disposition']
+        candidate_dict = {}
+        for j in wanted_data:
+            candidate_dict[j] = datasave[i][j]
+        if current_og_candidate == 'CONFIRMED':
+            updated_data['CONFIRMED'][0].append(candidate_dict)
+            updated_data['CONFIRMED'][1][1] += 1
+
+        if current_og_candidate == 'FALSE POSITIVE':
+            updated_data['FALSE POSITIVE'][0].append(candidate_dict)
+            updated_data['FALSE POSITIVE'][1][1] += 1
+
+        if current_og_candidate == 'NOT DISPOSITIONED':
+            updated_data['NOT DISPOSITIONED'][0].append(candidate_dict)
+            updated_data['NOT DISPOSITIONED'][1][1] += 1
+
+        if current_og_candidate == 'CANDIDATE':
+            updated_data['CANDIDATE'][0].append(candidate_dict)
+            updated_data['CANDIDATE'][1][1] += 1
+    output = [updated_data['CONFIRMED'][1],updated_data['FALSE POSITIVE'][1],updated_data['NOT DISPOSITIONED'][1],updated_data['CANDIDATE'][1]]
+    
+    
+
+    print(output[0][0],output[0][1])
+    print(output[1][0],output[1][1])
+    print(output[2][0],output[2][1])
+    print(output[3][0],output[3][1],'\n')
+    
+    return 'yuh'
+
+
+
 
 if __name__ == '__main__':
     load_data()
     return_confirmed_planets()
+    return_dispositions()
