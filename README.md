@@ -6,23 +6,26 @@ The objective of this project was to build a containerized Flask application for
 
 ## Description of Files
 ### `docker/`
-#### `Dockerfile.api`
-#### `Dockerfile.wrk`
-#### `docker-compose.yml`
+- `Dockerfile.api`
+- `Dockerfile.wrk`
+- `docker-compose.yml`
 
-### kubernetes/prod
-#### `app-prod-api-development.yml`
-#### `app-prod-api-service.yml`
-#### `app-prod-db-deployment.yml`
-#### `app-prod-db-pvc.yml`
-#### `app-prod-db-service.yml`
-#### `app-prod-wrk-deployment.yml`
+### `kubernetes/prod/`
+- `app-prod-api-development.yml`
+- `app-prod-api-service.yml`
+- `app-prod-db-deployment.yml`
+- `app-prod-db-pvc.yml`
+- `app-prod-db-service.yml`
+- `app-prod-wrk-deployment.yml`
 
-### src
+### `src/`
 
-### test/
-#### test_flask.py
+### `test/`
+- `test_flask.py`
 
+### `Makefile`
+
+### `requirements.txt`
 
 ## Instructions
 ### Deploying the Software System on a Kubernetes Cluster
