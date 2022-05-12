@@ -147,7 +147,22 @@ def return_initial_dispositions():
     print(output[2][0],output[2][1],'\n')
     
     return '\nOutput complete.'
-
+def keep_confirmed_data():
+    """
+    Yea
+    """
+    logging.info("Data")
+    copydata = data
+    global data
+    data = {}
+   
+    for key in copydata:
+        if key != 'CONFIRMED':
+            del copydata[key]
+    data = copydata
+    print(json.dumps(data, indent=2))
+        
+    return 'yuh'
 def return_final_dispositions():
     """
     Yea
