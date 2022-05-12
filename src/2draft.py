@@ -80,7 +80,8 @@ def reorganize_by_dispositions():
     logging.info("Data")
     global updated_data
     updated_data = {'CONFIRMED' : [[],["Total Confirmed: ",0]],'FALSE POSITIVE': [[],["Total False Positives: ",0]],'NOT DISPOSITIONED': [[],["Total Not Dispositioned: ",0]],'CANDIDATE': [[],["Total Candidates: ",0]]}
-    
+    global data
+    data = {}
     for i in range(len(datasave)):
         current_og_candidate = datasave[i]['koi_disposition']
         candidate_dict = {}
@@ -103,14 +104,14 @@ def reorganize_by_dispositions():
             updated_data['CANDIDATE'][1][1] += 1
     data = updated_data        
     
-    return 'data has been updated to be categorized by dispositions.'
+    return (data,'data has been updated to be categorized by dispositions.')
 #@app.route('/epoch/<epoch>', methods=['GET'])
 def reorganize_by_initial_dispositions():
     """
     Yea
     """
     logging.info("Data")
-    global updated_data
+    global pre_data
     updated_data = {'FALSE POSITIVE': [[],["Total False Positives: ",0]],'NOT DISPOSITIONED': [[],["Total Not Dispositioned: ",0]],'CANDIDATE': [[],["Total Candidates: ",0]]}
     
     for i in range(len(datasave)):
@@ -163,4 +164,7 @@ def return_final_dispositions():
 if __name__ == '__main__':
     load_data()
     return_confirmed_planets()
+    reorganize_by_dispositions()
     return_final_dispositions()
+    reorganize_by_initial_dispositions()
+    return_initial_dispositions()
