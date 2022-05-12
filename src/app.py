@@ -11,9 +11,9 @@ app = Flask(__name__)
 
 @app.route('/load_data', methods = ['POST'])
 def load_data():
-    os.remove('koi_candidates.csv')
-    print('\nDownloading Files.\n\nGive me a Second!')
-    download("https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=cumulative&format=csv", out = "koi_candidates.csv", bar=None)
+    #os.remove('koi_candidates.csv')
+    #print('\nDownloading Files.\n\nGive me a Second!')
+    #download("https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=cumulative&format=csv", out = "koi_candidates.csv", bar=None)
 
     success = '\nFile has been successfully loaded into the memory.\n'
     logging.info('File is being loaded into the memory.\n')
