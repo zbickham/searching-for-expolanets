@@ -4,9 +4,9 @@ import uuid
 import os
 import json
 
-q = HotQueue("plot_queue", host='10.108.182.250', port=6437, db=1)
+q = HotQueue("plot_queue", host='10.105.4.24', port=6437, db=1)
 
-rd = redis.StrictRedis(host='10.108.182.250', port=6437, db=0)
+rd = redis.StrictRedis(host='10.105.4.24', port=6437, db=0)
 
 def generate_jid():
     """
