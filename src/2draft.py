@@ -35,7 +35,7 @@ def load_data():
     global datasave
     datasave = data['Candidates']
     global wanted_data
-    wanted_data = ['kepid','kepoi_name','kepler_name','koi_disposition','koi_pdisposition','koi_score','koi_time0bk']
+    wanted_data = ['kepid','kepoi_name','kepler_name','koi_disposition','koi_pdisposition','koi_time0bk']
     return '\ndata has been successfully loaded. \n'
 
 #@app.route('/help', methods=['GET'])
@@ -132,7 +132,7 @@ def reorganize_by_initial_dispositions():
             updated_data['CANDIDATE'][0].append(candidate_dict)
             updated_data['CANDIDATE'][1][1] += 1
     pre_data = updated_data        
-    
+    #print(json.dumps(pre_data, indent=2))
     return 'data has been updated to be categorized by dispositions.'
 
 #@app.route('/epoch/<epoch>', methods=['GET'])
