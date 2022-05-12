@@ -3,7 +3,6 @@ import json
 import logging
 import sys
 import csv
-import pandas as pd
 from wget import download
 import os
 import redis
