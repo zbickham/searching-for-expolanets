@@ -2,26 +2,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app-test-api-deployment
+  name: kepler-test-api-deployment
   labels:
-    username: app
+    username: kepler
     env: test
 spec:
   replicas: 1
   selector:
     matchLabels:
-      username: app
+      username: kepler
       env: test
-      app: app-test-api
+      app: kepler-test-api
   template:
     metadata:
       labels:
-        username: app
+        username: kepler
         env: test
-        app: app-test-api
+        app: kepler-test-api
     spec:
       containers:
-        - name: app-test-api-pod
+        - name: kepler-test-api-pod
           imagePullPolicy: Always
           image: zbickham/kepler-api:0.1.0
           command: ['sh', '-c', 'python app.py app-test-db-service']
