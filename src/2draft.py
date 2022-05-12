@@ -163,4 +163,4 @@ def return_final_dispositions():
 if __name__ == '__main__':
     load_data()
     return_confirmed_planets()
-    return_dispositions()
+    return_final_dispositions()
