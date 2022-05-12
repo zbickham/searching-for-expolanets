@@ -1,1 +1,30 @@
-
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-test-api-deployment
+  labels:
+    username: app
+    env: test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      username: app
+      env: test
+      app: app-test-api
+  template:
+    metadata:
+      labels:
+        username: app
+        env: test
+        app: app-test-api
+    spec:
+      containers:
+        - name: app-test-api-pod
+          imagePullPolicy: Always
+          image: zbickham/kepler-api:0.1.0
+          command: ['sh', '-c', 'python app.py app-test-db-service']
+          ports:
+          - name: http
+            containerPort: 5003
