@@ -111,7 +111,7 @@ def reorganize_by_initial_dispositions():
     """
     logging.info("Data")
     global updated_data
-    updated_data = {'CONFIRMED' : [[],["Total Confirmed: ",0]],'FALSE POSITIVE': [[],["Total False Positives: ",0]],'NOT DISPOSITIONED': [[],["Total Not Dispositioned: ",0]],'CANDIDATE': [[],["Total Candidates: ",0]]}
+    updated_data = {'FALSE POSITIVE': [[],["Total False Positives: ",0]],'NOT DISPOSITIONED': [[],["Total Not Dispositioned: ",0]],'CANDIDATE': [[],["Total Candidates: ",0]]}
     
     for i in range(len(datasave)):
         current_og_candidate = datasave[i]['koi_pdisposition']
@@ -135,12 +135,24 @@ def reorganize_by_initial_dispositions():
     return 'data has been updated to be categorized by dispositions.'
 
 #@app.route('/epoch/<epoch>', methods=['GET'])
+def return_initial_dispositions():
+    """
+    Yea
+    """
+    logging.info("Data")
+    output = [pre_data['FALSE POSITIVE'][1],pre_data['NOT DISPOSITIONED'][1],pre_data['CANDIDATE'][1]]
+    print(output[0][0],output[0][1])
+    print(output[1][0],output[1][1])
+    print(output[2][0],output[2][1],'\n')
+    
+    return '\nOutput complete.'
+
 def return_final_dispositions():
     """
     Yea
     """
     logging.info("Data")
-    output = [updated_data['CONFIRMED'][1],updated_data['FALSE POSITIVE'][1],updated_data['NOT DISPOSITIONED'][1],updated_data['CANDIDATE'][1]]
+    output = [data['CONFIRMED'][1],data['FALSE POSITIVE'][1],data['NOT DISPOSITIONED'][1],data['CANDIDATE'][1]]
     print(output[0][0],output[0][1])
     print(output[1][0],output[1][1])
     print(output[2][0],output[2][1])
