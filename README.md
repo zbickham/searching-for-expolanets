@@ -70,6 +70,21 @@ $ pytest
 This ensures that the POST, GET, PUT, and DELETE commands in the application have no errors.
 
 ### Interacting with System's CRUD Operations
+The following routes can be used to perform CRUD operations in our application:
+```bash
+$ curl localhost:5003/<ROUTE>
+```
+Possible Routes:
+```bash
+/load_data
+/help
+/confirmed_planets
+/reorganize/final
+/reorganize/initial
+/return/inital
+/return/final
+/delete/false_data
+```
 
 ### Creating a New Job
 To create a new job in the application, you can run the following command:
