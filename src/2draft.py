@@ -35,7 +35,7 @@ def load_data():
     global datasave
     datasave = data['Candidates']
     global wanted_data
-    wanted_data = ['kepid','kepoi_name','kepler_name','koi_disposition','koi_pdisposition','koi_score']
+    wanted_data = ['kepid','kepoi_name','kepler_name','koi_disposition','koi_pdisposition','koi_score','koi_time0bk']
     return '\ndata has been successfully loaded. \n'
 
 #@app.route('/help', methods=['GET'])
