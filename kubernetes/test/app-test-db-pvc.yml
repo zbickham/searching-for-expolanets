@@ -2,9 +2,9 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: app-test-db-pvc
+  name: kepler-test-db-pvc
   labels:
-    username: app
+    username: kepler
     env: test
 spec:
   accessModes:
