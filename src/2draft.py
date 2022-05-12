@@ -103,7 +103,7 @@ def reorganize_by_dispositions():
             updated_data['CANDIDATE'][0].append(candidate_dict)
             updated_data['CANDIDATE'][1][1] += 1
     data = updated_data        
-    
+    datasave = data
     return (data,'data has been updated to be categorized by dispositions.')
 #@app.route('/epoch/<epoch>', methods=['GET'])
 def reorganize_by_initial_dispositions():
@@ -152,7 +152,7 @@ def keep_confirmed_data():
     Yea
     """
     logging.info("Data")
-    copydata = data
+    copydata = datasave[i]['koi_pdisposition']
     global data
     data = {}
    
@@ -183,3 +183,4 @@ if __name__ == '__main__':
     return_final_dispositions()
     reorganize_by_initial_dispositions()
     return_initial_dispositions()
+    keep_confirmed_data()
