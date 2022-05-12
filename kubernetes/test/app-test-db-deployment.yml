@@ -1,1 +1,32 @@
-
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-test-db-deployment
+  labels:
+    username: app
+    env: test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      username: app
+      env: test
+      app: app-test-db
+  template:
+    metadata:
+      labels:
+        username: app
+        env: test
+        app: app-test-db
+    spec:
+      containers:
+        - name: redis
+          image: redis:5.0.0
+          volumeMounts:
+          - name: app-test-db-volume
+            mountPath: "/data"
+      volumes:
+      - name: app-test-db-volume
+        persistentVolumeClaim:
+          claimName: app-test-db-pvc
