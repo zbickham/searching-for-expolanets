@@ -2,26 +2,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app-test-wrk-deployment
+  name: kepler-test-wrk-deployment
   labels:
-    username: app
+    username: kepler
     env: test
 spec:
   replicas: 2
   selector:
     matchLabels:
-      username: app
+      username: kepler
       env: test
-      app: app-test-wrk
+      app: kepler-test-wrk
   template:
     metadata:
       labels:
-        username: app
+        username: kepler
         env: test
-        app: app-test-wrk
+        app: kepler-test-wrk
     spec:
       containers:
-        - name: app-test-api-pod
+        - name: kepler-test-api-pod
           imagePullPolicy: Always
           image: zbickham/kepler-wrk:0.1.0
           command: ['sh', '-c', 'python worker.py app-test-db-service']
