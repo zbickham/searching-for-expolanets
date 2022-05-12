@@ -36,7 +36,7 @@ def load_data():
     datasave = data['Candidates']
     global wanted_data
     wanted_data = ['kepid','kepoi_name','kepler_name','koi_disposition','koi_pdisposition','koi_time0bk']
-    return '\ndata has been successfully loaded. \n'
+    return (data,datasave,'\ndata has been successfully loaded. \n')
 
 #@app.route('/help', methods=['GET'])
 def return_instructions():
@@ -79,8 +79,9 @@ def reorganize_by_dispositions():
     """
     logging.info("Data")
     global updated_data
-    updated_data = {'CONFIRMED' : [[],["Total Confirmed: ",0]],'FALSE POSITIVE': [[],["Total False Positives: ",0]],'NOT DISPOSITIONED': [[],["Total Not Dispositioned: ",0]],'CANDIDATE': [[],["Total Candidates: ",0]]}
     global data
+    updated_data = {'CONFIRMED' : [[],["Total Confirmed: ",0]],'FALSE POSITIVE': [[],["Total False Positives: ",0]],'NOT DISPOSITIONED': [[],["Total Not Dispositioned: ",0]],'CANDIDATE': [[],["Total Candidates: ",0]]}
+    datasave = data['Candidates']
     data = {}
     for i in range(len(datasave)):
         current_og_candidate = datasave[i]['koi_disposition']
@@ -147,19 +148,41 @@ def return_initial_dispositions():
     print(output[2][0],output[2][1],'\n')
     
     return '\nOutput complete.'
-def keep_confirmed_data():
+def delete_some_data(requested_to_delete):
     """
     Yea
     """
     logging.info("Data")
-    copydata = datasave[i]['koi_pdisposition']
+    copydata = {}
     global data
-    data = {}
-   
-    for key in copydata:
-        if key != 'CONFIRMED':
-            del copydata[key]
-    data = copydata
+    for i in range(len(datasave)):
+        if datasave[i]['kepid'] != requested_to_delete:
+            for j in wanted_data:
+                data[j] = datasave[i][j]
+                
+                '''
+    #data = datasave
+    print(json.dumps(data, indent=2))
+    for i in range(len(data)):
+        for j in range(len(data)):
+            if data[i][j]['kepid'] == requested_to_delete:
+                remove(data[i][0]['kepid'])
+    data = updated_data
+                '''   
+    print(json.dumps(data, indent=2))
+
+    return 'yuh'
+def delete_false_data():
+    """
+    Yea
+    """
+    logging.info("Data")
+    copydata = {}
+    global data
+    copydata = data
+    global updated_data
+    updated_data = {'CONFIRMED' : data['CONFIRMED']}
+    data = updated_data
     print(json.dumps(data, indent=2))
         
     return 'yuh'
@@ -183,4 +206,5 @@ if __name__ == '__main__':
     return_final_dispositions()
     reorganize_by_initial_dispositions()
     return_initial_dispositions()
-    keep_confirmed_data()
+    #delete_false_data()
+    delete_some_data('10583066')
