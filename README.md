@@ -8,7 +8,7 @@ The objective of this project was to build a containerized Flask application for
 ### `docker/`
 - `Dockerfile.api`: This Dockerfile contains all the commands to containerize `app.py`
 - `Dockerfile.wrk`: This Dockerfile contains all the commands to conatainerize `worker.py`
-- `docker-compose.yml`
+- `docker-compose.yml`: A file to compose each Docker file
 
 ### `kubernetes/`
 - `prod/`
@@ -27,6 +27,11 @@ The objective of this project was to build a containerized Flask application for
   - `app-test-wrk-deployment.yml`: This is a file to create a test deployment for the worker
 
 ### `src/`
+- `app.py`: This Python script runs our Flask application
+- `data.json`: This is our data in JSON format
+- `jobs.py`: This Python script runs jobs for our API
+- `koi_candidates.csv`: This is our data in CSV format
+- `worker.py`: This Python script generates plots for our data
 
 ### `test/`
 - `test_flask.py`: This Python script runs various unit tests to check the validity of the functions defined in the `app.py` script
@@ -65,7 +70,6 @@ $ pytest
 This ensures that the POST, GET, PUT, and DELETE commands in the application have no errors.
 
 ### Interacting with System's CRUD Operations
-
 
 ### Creating a New Job
 To create a new job in the application, you can run the following command:
