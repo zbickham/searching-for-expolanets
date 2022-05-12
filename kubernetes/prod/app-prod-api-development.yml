@@ -21,7 +21,7 @@ spec:
           image: zbickham/kepler-api:0.1
           env: 
           - name: REDIS_IP
-            value: "10.105.4.24" 
+            value: 10.105.4.24 
           ports:
           - name: http
             containerPort: 5000
