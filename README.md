@@ -56,3 +56,4 @@ This ensures that the POST and GET commands in the application have no errors.
 1. ' wget "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=cumulative&format=csv" -O "koi_candidates.csv"'
 
 ## Citations
+Link for Kepler "objects of interests" CSV file: https://www.kaggle.com/datasets/nasa/kepler-exoplanet-search-results/download
