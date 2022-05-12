@@ -23,7 +23,7 @@ spec:
       containers:
         - name: kepler-test-api-pod
           imagePullPolicy: Always
-          image: zbickham/kepler-wrk:0.1.0
+          image: zbickham/kepler-wrk:0.1
           command: ['sh', '-c', 'python worker.py app-test-db-service']
           ports:
           - name: http
