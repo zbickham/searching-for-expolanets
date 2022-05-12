@@ -21,4 +21,4 @@ spec:
           image: zbickham/kepler-wrk:0.1
           env:
           - name: REDIS_IP
-            value: "XX.XX.XXX.XXX"
+            value: 10.105.4.24
