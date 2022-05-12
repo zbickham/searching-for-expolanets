@@ -46,10 +46,13 @@ def return_instructions():
     '''
     logging.info("Instructions on requesting data printed below.")
     output = "/help - (GET) - output these instructions"
-    output = output + "\n/load_data - (POST) -  "
-    output = output + "\n/epoch - (GET) - Returns all EPOCHs. "
-    output = output + "\n/epoch/<epoch> - (GET) - R" 
-
+    output = output + "\n/reorganize/initial - (PUT) -  "
+    output = output + "\n/reorganize/final - (PUT) -  "
+    output = output + "\n/return/final - (GET) -  "
+    output = output + "\n/return/initial - (GET) -  "
+    output = output + "\\n/delete/false_data - (DELETE) - Returns all EPOCHs. "
+    output = output + "\n/confirmed_planets - (GET) - R"
+    
 
     return output
 
@@ -106,6 +109,8 @@ def reorganize_by_dispositions():
     data = updated_data        
     datasave = data
     return (data,'data has been updated to be categorized by dispositions.')
+
+
 @app.route('/reorganize/initial', methods=['PUT'])
 def reorganize_by_initial_dispositions():
     """
